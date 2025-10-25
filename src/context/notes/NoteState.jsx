@@ -2,24 +2,10 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props)=>{
-    // const s1 = {
-    //     "name": "Ranjit",
-    //     "class": "CS"
-    // }
-    
-    // const [state , setState]=useState(s1);
-    // const update = ()=>{
-    //     setTimeout(() => {
-    //         setState({
-    //     "name": "Amit",
-    //     "class": "CS 1"
-    // })
-    //     }, 1000);
-    // }
-
+   
     const notesInitial = [
   {
-    "_id": "68f20b4b36ee2f73929d4198",
+    "_id": "68f20b4b236ee2f73929d4198",
     "user": "68f209fb36ee2f73929d4194",
     "title": "Maths",
     "description": "Maths is very interesting",
@@ -28,7 +14,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
   {
-    "_id": "68f20bf536ee2f73929d419b",
+    "_id": "68f202bf536ee2f73929d419b",
     "user": "68f209fb36ee2f73929d4194",
     "title": "Science",
     "description": "Science is very interesting",
@@ -37,7 +23,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
    {
-    "_id": "68f20b4b36ee2f73929d4198",
+    "_id": "68f202b4b36ee2f73929d4198",
     "user": "68f209fb36ee2f73929d4194",
     "title": "Maths",
     "description": "Maths is very interesting",
@@ -46,7 +32,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
   {
-    "_id": "68f20bf536ee2f73929d419b",
+    "_id": "68f20b2f536ee2f73929d419b",
     "user": "68f209fb36ee2f73929d4194",
     "title": "Science",
     "description": "Science is very interesting",
@@ -55,7 +41,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
    {
-    "_id": "68f20b4b36ee2f73929d4198",
+    "_id": "68f20b4b236ee2f73929d4198",
     "user": "68f209fb36ee2f73929d4194",
     "title": "Maths",
     "description": "Maths is very interesting",
@@ -75,8 +61,35 @@ const NoteState = (props)=>{
 ]
 
 const [notes,setNotes] = useState(notesInitial);
+
+// Add a Note
+const addNote = (title,description,tag)=>{
+  // TODO: API Call
+  console.log("Adding Note")
+  const note = {
+    "_id": "68f20bf536ee62f73929d419b",
+    "user": "68f209fb36ee2f73929d4194",
+    "title":title ,
+    "description":description ,
+    "tag": tag,
+    "date": "2025-10-17T09:27:17.180Z",
+    "__v": 0
+  };
+setNotes(notes.concat(note))
+}
+
+// Delete a Note
+const deleteNote = ()=>{
+  
+}
+
+// Edit a Note
+const editNote = ()=>{
+  
+}
+
     return (
-        <NoteContext.Provider value={{notes,setNotes}}>
+        <NoteContext.Provider value={{notes, addNote, deleteNote, editNote}}>
             {props.children}
         </NoteContext.Provider>
     )

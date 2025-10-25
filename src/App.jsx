@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import NoteState from './context/notes/NoteState';
+import Alert from './components/Alert';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <div className="container-fluid">
     <Router>
         <Navbar />
+        <Alert message="Hello" />
         <Routes>
         <Route path='/' element={<Home />} />
         </Routes>

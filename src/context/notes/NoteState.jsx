@@ -35,6 +35,42 @@ const NoteState = (props)=>{
     "tag": "General",
     "date": "2025-10-17T09:27:17.180Z",
     "__v": 0
+  },
+   {
+    "_id": "68f20b4b36ee2f73929d4198",
+    "user": "68f209fb36ee2f73929d4194",
+    "title": "Maths",
+    "description": "Maths is very interesting",
+    "tag": "personal",
+    "date": "2025-10-17T09:24:27.871Z",
+    "__v": 0
+  },
+  {
+    "_id": "68f20bf536ee2f73929d419b",
+    "user": "68f209fb36ee2f73929d4194",
+    "title": "Science",
+    "description": "Science is very interesting",
+    "tag": "General",
+    "date": "2025-10-17T09:27:17.180Z",
+    "__v": 0
+  },
+   {
+    "_id": "68f20b4b36ee2f73929d4198",
+    "user": "68f209fb36ee2f73929d4194",
+    "title": "Maths",
+    "description": "Maths is very interesting",
+    "tag": "personal",
+    "date": "2025-10-17T09:24:27.871Z",
+    "__v": 0
+  },
+  {
+    "_id": "68f20bf536ee2f73929d419b",
+    "user": "68f209fb36ee2f73929d4194",
+    "title": "Science",
+    "description": "Science is very interesting",
+    "tag": "General",
+    "date": "2025-10-17T09:27:17.180Z",
+    "__v": 0
   }
 ]
 

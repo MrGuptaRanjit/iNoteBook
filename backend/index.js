@@ -1,0 +1,29 @@
+// //mongodb+srv://mrguptaranjit:<RanjitGupta@123>@ranjit.mvswbl7.mongodb.net/?retryWrites=true&w=majority&appName=Ranjit
+
+// const connectToMongo = require('./db');
+
+// connectToMongo();
+
+const connectToMongo = require('./db');
+const express = require('express');
+
+const app = express();
+const port = 5000;
+
+connectToMongo();
+
+//middleware
+app.use(express.json());
+
+// app.get('/', (req, res) => {
+//   res.send('Hello Ranjit, MongoDB connection successful!');
+// });
+
+//Available Routes
+app.use('/api/auth' , require('./routes/auth'))
+app.use('/api/notes' , require('./routes/notes'))
+
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});

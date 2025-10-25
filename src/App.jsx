@@ -15,6 +15,7 @@ function App() {
   return (
     <>
     <NoteState>
+      <div className="container-fluid">
     <Router>
         <Navbar />
         <Routes>
@@ -24,6 +25,7 @@ function App() {
         <Route path='/about' element={<About />} />
         </Routes>
     </Router>
+    </div>
     </NoteState>
     </>
   )

@@ -10,7 +10,7 @@ const AddNote = () => {
 
   const handleAddNote = (e)=>{
     e.preventDefault();
-    addNote(note.title , note.description);
+    addNote(note.title , note.description, note.tag);
   }
 
   const onChange = (e)=>{
@@ -45,6 +45,18 @@ const AddNote = () => {
               className="form-control"
               id="description"
               name="description"
+              onChange={onChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="tag" className="form-label">
+              Tag
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="tag"
+              name="tag"
               onChange={onChange}
             />
           </div>

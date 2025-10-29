@@ -9,7 +9,7 @@ const Noteitem = (props) => {
   const context = useContext(noteContext);
   const {deleteNote} = context;
 
-  const { note } = props;
+  const { note , updateNote } = props;
   return (
     <div className="col-md-3">
       <div className="card my-3" style={{ width: "18rem" }}>
@@ -18,7 +18,7 @@ const Noteitem = (props) => {
           <h5 className="card-title">{note.title}</h5>
           <div id="icon" className="mx-3">
             <FontAwesomeIcon icon={faTrash} onClick={()=>{(deleteNote(note._id))}} /> 
-            <FontAwesomeIcon icon={faPenToSquare} />
+            <FontAwesomeIcon icon={faPenToSquare} onClick={()=>{(updateNote(note))}} />
           </div>
           </div>
           <p className="card-text">{note.description}</p>         

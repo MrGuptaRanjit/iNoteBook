@@ -22,8 +22,6 @@ function App() {
         <Alert message="Hello" />
         <Routes>
         <Route path='/' element={<Home />} />
-        </Routes>
-        <Routes>
         <Route path='/about' element={<About />} />
         </Routes>
     </Router>

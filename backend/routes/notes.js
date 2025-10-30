@@ -23,7 +23,7 @@ router.post(
   "/addnote",
   fetchuser,
   [
-    body("title", "Enter a valid title").isLength({ min: 3 }),
+    body("title", "Enter a valid title").isLength({ min: 1 }),
     body("description", "description must be atleast 5 charaters").isLength({
       min: 5,
     }),

@@ -10,28 +10,35 @@ const Notes = () => {
     getNotes();
   }, []);
 
-
   const ref = useRef(null);
   const refClose = useRef(null);
 
+  const [note, setNote] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
 
-    const[note,setNote] = useState({id:"",etitle:"",edescription:"",etag:""})
-
-    const updateNote = (currentNote) => {
+  const updateNote = (currentNote) => {
     ref.current.click();
-    setNote({id: currentNote._id ,etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag});
+    setNote({
+      id: currentNote._id,
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
   };
 
-  const handleUpdateNote = (e)=>{
+  const handleUpdateNote = (e) => {
     // console.log("Updating the note..." , note)
-    editNote(note.id, note.etitle, note.edescription, note.etag)
+    editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
-  }
+  };
 
-  const onChange = (e)=>{
-    setNote({...note , [e.target.name]: e.target.value})
-
-  }
+  const onChange = (e) => {
+    setNote({ ...note, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="container my-3">
@@ -82,6 +89,8 @@ const Notes = () => {
                       value={note.etitle}
                       aria-describedby="emailHelp"
                       onChange={onChange}
+                      minLength={1}
+                      required
                     />
                   </div>
                   <div className="mb-3">
@@ -95,6 +104,8 @@ const Notes = () => {
                       name="edescription"
                       value={note.edescription}
                       onChange={onChange}
+                      minLength={5}
+                      required
                     />
                   </div>
                   <div className="mb-3">
@@ -110,7 +121,6 @@ const Notes = () => {
                       onChange={onChange}
                     />
                   </div>
-
                 </form>
               </div>
               <div className="modal-footer">
@@ -122,7 +132,12 @@ const Notes = () => {
                 >
                   Close
                 </button>
-                <button onClick={handleUpdateNote} type="button" className="btn btn-primary">
+                <button
+                  onClick={handleUpdateNote}
+                  type="button"
+                  className="btn btn-primary"
+                  disabled={note.etitle.length < 1 || note.edescription.length < 5}
+                >
                   Update Note
                 </button>
               </div>
@@ -133,6 +148,9 @@ const Notes = () => {
 
       <div className=" row my-3">
         <h2>Your Notes</h2>
+        <div className="container mx-3">
+          {notes.length === 0 && "No Notes to display , Please add Notes..."}
+        </div>
         {notes.map((note) => {
           return (
             <Noteitem key={note._id} updateNote={updateNote} note={note} />

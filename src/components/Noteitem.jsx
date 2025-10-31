@@ -17,7 +17,9 @@ const Noteitem = (props) => {
           <div className="d-flex align-items-center">
           <h5 className="card-title">{note.title}</h5>
           <div id="icon" className="mx-3">
-            <FontAwesomeIcon icon={faTrash} onClick={()=>{(deleteNote(note._id))}} /> 
+            <FontAwesomeIcon icon={faTrash} onClick={()=>{(deleteNote(note._id)); 
+              props.showAlert("Notes Deleted Successfully" , "success")
+            }} /> 
             <FontAwesomeIcon icon={faPenToSquare} onClick={()=>{(updateNote(note))}} />
           </div>
           </div>

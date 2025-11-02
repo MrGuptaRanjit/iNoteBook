@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -74,6 +74,9 @@ const Login = (props) => {
           Submit
         </button>
       </form>
+      <div className="my-3">
+    New user?.. <Link to="/signup">Sign up</Link>
+    </div>
     </div>
   );
 };

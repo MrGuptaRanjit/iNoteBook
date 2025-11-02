@@ -13,7 +13,7 @@ function App() {
   const [alert, setAlert] = useState(null);
 
   useEffect(() => {
-  localStorage.removeItem("token"); // ✅ clear token on every reload
+  localStorage.removeItem("token"); //  clear token on every reload 
 }, []);
 
 
@@ -27,14 +27,12 @@ function App() {
     }, 2000);
   };
 
-  const token = localStorage.getItem("token");
-
   return (
     <>
       <NoteState>
         <div className="container-fluid">
           <Router>
-            <Navbar />
+            <Navbar showAlert={showAlert} />
             <Alert alert={alert} />
             <Routes>
               <Route path="/"element={ <Home showAlert={showAlert} />}/> 

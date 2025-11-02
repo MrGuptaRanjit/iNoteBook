@@ -86,20 +86,6 @@ const Signup = (props) => {
             name="password"
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="cpassword" className="form-label">
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            value={credentials.password}
-            onChange={onChange}
-            minLength={5} required
-            id="cpassword"
-            name="cpassword"
-          />
-        </div>
 
         <button type="submit" className="btn btn-primary">
           Submit

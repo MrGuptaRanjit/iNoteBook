@@ -1,20 +1,10 @@
-// const mongoose = require('mongoose');
 
-
- //const mongoURI = "mongodb+srv://mrguptaranjit:ranjitgupta123@ranjit.mvswbl7.mongodb.net/?retryWrites=true&w=majority&appName=Ranjit"
-
-// const connectToMongo = ()=>{
-//     mongoose.connect(mongoURI , ()=>{
-//         console.log("Connected to Mongo")
-//     })
-// }
-
-// module.exports = connectToMongo;
 
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const mongoURI = "mongodb+srv://mrguptaranjit:ranjitgupta123@ranjit.mvswbl7.mongodb.net/?retryWrites=true&w=majority&appName=Ranjit"
-
+// const mongoURI = "mongodb+srv://mrguptaranjit:ranjitgupta123@ranjit.mvswbl7.mongodb.net/?retryWrites=true&w=majority&appName=Ranjit"
+const mongoURI = process.env.MONGO_URI;
 
 const connectToMongo = async () => {
   try {

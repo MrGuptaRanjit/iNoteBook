@@ -12,7 +12,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 router.post(
   "/createuser",
   [
-    body("name", "Enter a valid name").isLength({ min: 3 }),
+    body("name", "Enter a valid name").isLength({ min: 1 }),
     body("email", "Enter a valid Email").isEmail(),
     body("password", "password must be atleast 5 charaters").isLength({
       min: 5,
